@@ -1,0 +1,55 @@
+<div class="popup-message">Click any one</div>
+      <div class="image-row">
+
+            <div class="image-container"  *ngIf="activeImage !== 'tenth'" (click)="showDescription('tenth')">
+                <img src="https://cdn-icons-png.flaticon.com/512/6192/6192548.png" width="256" height="256" alt="" title="" class="img-small" [ngClass]="imageClass">
+                <svg class="overlay-svg" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <text x="100" y="110" text-anchor="middle" font-size="50" font-family="serif" fill="black">X</text>
+                </svg>
+            </div>
+            
+            <div *ngIf="activeImage === 'tenth'" class="description">
+              <p>School Name: Sri Vidyaa Mandir Matriculation Hr Sec School</p>
+              <p>Percentage: 94.8%</p>
+              <p>Year: 2017-2018</p>
+              <button (click)="hideDescription()">Back</button>
+            </div>
+
+        <div class="image-container"  *ngIf="activeImage !== 'twelwth'" (click)="showDescription('twelwth')">
+            <img src="https://cdn-icons-png.flaticon.com/512/6192/6192548.png" width="256" height="256" alt="" title="" class="img-small" [ngClass]="imageClass">
+            <svg class="overlay-svg" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <text x="100" y="110" text-anchor="middle" font-size="50" font-family="serif" fill="black">XII</text>
+            </svg>
+          </div>
+    
+          <div *ngIf="activeImage === 'twelwth'" class="description" @flockAnimation>
+            <p>School Name: Mahendra Matric Hr Sec School</p>
+            <p>Percentage: 78.33%</p>
+            <p>Year: 2019-2020</p>
+            <button (click)="hideDescription()">Back</button>
+          </div>
+ 
+      <div class="image-container"  *ngIf="activeImage !== 'college'" (click)="showDescription('college')">
+        <img src="https://cdn-icons-png.flaticon.com/512/6192/6192548.png" width="256" height="256" alt="" title="" class="img-small" [ngClass]="imageClass">
+        <img src="   https://cdn-icons-png.flaticon.com/512/5404/5404967.png " width="256" height="256" alt="" title="" class="inner-img">
+      </div>
+
+      <div *ngIf="activeImage === 'college'" class="description" @flockAnimation>
+        <p>College Name: Karpagam College of Engineering</p>
+        <p>CGPA: 8.9</p>
+        <p>Year: 2020-2024</p>
+        <button (click)="hideDescription()">Back</button>
+      </div>
+      
+    </div>
+
+   
+  
+
+     
+ 
+     
+     
+
+
+  

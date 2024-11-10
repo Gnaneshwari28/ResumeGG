@@ -1,0 +1,348 @@
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.73rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+    padding:0;
+    margin:0;
+  }
+  
+  
+  .profile-icons{
+    display: flex;
+    align-items: center;
+    gap: 0.73rem;
+    margin-top: 0;
+    padding-top:0;
+    justify-content: right;
+    padding-right:2rem ;
+  }
+  
+  .social-links path {
+    transition: fill 0.3s ease;
+    fill: var(--gray-400);
+  }
+  
+  .social-links a:hover svg path {
+    fill: var(--gray-900);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .content {
+      padding-top: 80px; 
+      padding-bottom: 80px; 
+      height: calc(100vh - 160px); 
+    }
+  }
+  
+  .social-links path {
+  transition: fill 0.3s ease;
+  fill: var(--gray-400);
+  }
+  
+  .social-links a:hover svg path {
+  fill: var(--gray-900);
+  }
+  
+  
+  .divider {
+  height: 1px;
+  width: 100%;
+  background: var(--red-to-pink-to-purple-horizontal-gradient);
+  }
+  
+  
+  
+  /* Variable Definitions */
+  
+  :host {
+  
+  --bright-blue: oklch(51.01% 0.274 263.83);
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --french-violet: oklch(47.66% 0.246 305.88);
+  --vivid-pink: oklch(69.02% 0.277 332.77);
+  --hot-red: oklch(61.42% 0.238 15.34);
+  --orange-red: oklch(63.32% 0.24 31.68);
+  
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
+  
+  --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+    180deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--electric-violet) 100%
+  );
+  
+  --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+    90deg,
+    #ff4500, /* fallback for --orange-red */
+    #ff1493 50%, /* fallback for --vivid-pink */
+    #8a2be2 100% /* fallback for --electric-violet */
+  );
+  
+  
+  }
+  
+  .sticky-header {
+  position:fixed;
+  align-items: center;
+  justify-content:center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; 
+  height: 60px;
+  background-color: white;
+  }
+  
+  .sticky-footer {
+  
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 60px;
+  background-color: white;
+  }
+  
+  .content {
+    position: relative;
+    top: 60px; 
+    bottom: 60px; 
+    overflow-y: auto; 
+    height: calc(100vh - 140px); 
+    padding: 20px; 
+    box-sizing: border-box; 
+  }
+  
+  
+  /* Hover effect for GitHub icon */
+  .social-links a[href*="github.com"]:hover svg path {
+    fill: #000;
+  }
+  
+  /* Hover effect for Email icon */
+  .social-links a[href*="mailto"]:hover svg path {
+    fill: rgb(248, 0, 0);
+  }
+  
+  /* Hover effect for LinkedIn icon */
+  .social-links a[href*="linkedin.com"]:hover svg path {
+    fill: #0a66c2;
+  }
+  
+  .calligraphy-font {
+    font-family: 'Edwardian Script ITC';
+    font-size: 50px;
+    margin: 1.5rem;
+    text-align: center ;
+    flex-grow: 1;
+  }
+  
+  /* Responsive adjustments for tablets and smaller screens */
+  @media screen and (max-width: 768px) {
+    .social-links {
+      gap: 0.5rem; /* Reduce gap between social icons */
+    }
+  
+    .profile-icons {
+      gap: 0.5rem; /* Reduce gap for profile icons */
+      padding-right: 1rem; /* Reduce right padding */
+    }
+  
+    .sticky-header, .sticky-footer {
+      height: 50px; /* Adjust header and footer height */
+    }
+  
+    .content {
+      top: 50px; /* Adjust content positioning */
+      bottom: 50px;
+      height: calc(100vh - 100px); /* Adjust height */
+      padding: 15px; /* Adjust padding */
+    }
+  
+    .calligraphy-font {
+      font-size: 40px; /* Reduce font size for smaller screens */
+    }
+  }
+  
+  /* Responsive adjustments for mobile screens */
+  @media screen and (max-width: 480px) {
+    .social-links {
+      flex-direction: column; /* Stack social icons vertically */
+      gap: 0.5rem; /* Reduce gap between icons */
+    }
+  
+    .profile-icons {
+      flex-direction: column; /* Stack profile icons vertically */
+      gap: 0.5rem; /* Reduce gap */
+      padding-right: 0; /* Remove right padding */
+    }
+  
+    .sticky-header, .sticky-footer {
+      height: 40px; /* Further reduce header and footer height */
+    }
+  
+    .content {
+      top: 20px; 
+      bottom: 20px;
+      max-height: calc(100vh - 40px); /* Adjust height */
+      padding: 10px;
+    }
+  
+    .calligraphy-font {
+      font-size: 30px; /* Further reduce font size */
+    }
+  }
+
+
+  /* --- Card Styles --- */
+
+/* Grid layout for cards */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    max-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+ 
+  
+  .card p {
+    color: var(--gray-700);
+    font-size: 1rem;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+ 
+  
+  @media screen and (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  
+    .card {
+      padding: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+/* Card Styles */
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-right: 1.5rem; /* Space between cards */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer; /* Make it clickable */
+    overflow: hidden;
+    width: 250px; /* Set a fixed width for the cards */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Hover effect */
+  }
+  
+  .card-header {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-body {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Hide detailed content initially */
+  .card-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* When the card content is shown */
+  .card-content.show {
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Description text styling */
+  .card-description {
+    color: #555;
+    margin-bottom: 1rem;
+  }
+  
+  /* Horizontal scroll container */
+  .card-scroll-container {
+    display: flex;
+    padding: 20px;
+  }
+  
+
+  
+  
+  .card-wrapper {
+    position: absolute;
+    top: 20%;  /* Adjust as per design */
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;  /* Adjust size */
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+  }
+  
+
+
+  
+  .profile-icons{
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    padding-top:0;
+    justify-content: right;
+    padding-right:2rem ;
+  }

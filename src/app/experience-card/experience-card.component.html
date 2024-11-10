@@ -1,0 +1,30 @@
+<div class="professional-details-card">
+    <div class="timeline">
+     <div class="timeline-item"  (click)="showPopup('engineer')">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <h3>Software Engineer</h3>
+              <p class="date">May 2024 - Present</p>
+            </div>
+          </div>
+      <div class="timeline-item"  (click)="showPopup('intern')">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <h3>Software Engineer Intern</h3>
+          <p class="date">Aug 2023 - Apr 2024</p>
+        </div>
+      </div> 
+      
+    </div>
+  </div>
+  
+
+ <!-- Popup Modal -->
+<div *ngIf="popupVisible" class="popup-modal">
+    <div class="popup-content">
+      <span class="close-btn"  (click)="triggerExplosion()">×</span>
+      <h3>{{ popupData?.title }}</h3>
+      <p [innerHTML]="popupData?.description"></p>
+      <div class="particle" *ngFor="let i of particlesArray"></div>
+      </div>
+  </div>

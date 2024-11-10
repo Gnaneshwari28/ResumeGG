@@ -1,0 +1,154 @@
+<!-- <app-maps></app-maps> -->
+
+<div class="tab-container">
+
+    <div class="tab" [ngClass]="{'active': activeTab === 1}" (click)="setActiveTab(1)">Skills</div>
+    <div class="tab" [ngClass]="{'active': activeTab === 2}" (click)="setActiveTab(2)">Hobbies</div>
+    <div class="tab" [ngClass]="{'active': activeTab === 4}" (click)="setActiveTab(4)">Contact Form</div>
+    <div class="tab" [ngClass]="{'active': activeTab === 5}" (click)="setActiveTab(5)">Locate Me</div>
+ 
+</div>
+  
+
+<!-- Content for each tab -->
+<div *ngIf="activeTab === 1" class="tab-content">
+   <h2></h2>
+    <div class="skills-grid">
+      <!-- Languages -->
+      <div class="skills-category">
+        <h5 >Languages</h5>
+        <ul>
+          <li>Java</li>
+          <li>SQL</li>
+          <li>TypeScript</li>
+        </ul>
+      </div>
+  
+      <!-- Frameworks -->
+      <div class="skills-category">
+        <h5 >Frameworks</h5>
+        <ul>
+          <li>Angular</li>
+          <li>Spring Boot</li>
+        </ul>
+      </div>
+  
+      <!-- Frontend Technologies -->
+      <div class="skills-category">
+        <h5 >Frontend Technologies</h5>
+        <ul>
+          <li>HTML</li>
+          <li>CSS/SCSS</li>
+        </ul>
+      </div>
+  
+      <!-- API Testing and Documentation -->
+      <div class="skills-category">
+        <h5 >API Testing</h5>
+        <ul>
+          <li>Postman</li>
+          <li>Swagger UI</li>
+        </ul>
+      </div>
+  
+      <!-- Debugging Tools -->
+      <div class="skills-category">
+        <h5 >
+             Debugging Tools</h5>
+        <ul>
+          <li>
+            Browser Developer Tools (Console, Network)</li>
+        </ul>
+      </div>
+  
+   
+    </div>
+  </div>
+  
+  
+  
+  
+<div *ngIf="activeTab === 2" class="tab-content">
+    <!-- Content for Hobbies Tab -->
+<!-- Hobbies Section -->
+<div class="hobbies-container">
+    <div class="hobbies-row">
+      <div class="empty-column"></div>  <!-- Left empty column -->
+      <div class="hobbies-column">
+        <div class="hobbies-category">
+          <h2></h2>
+          <ul>
+            <li>Problem Solving</li>
+            <li>Brain Games</li>
+            <li>Puzzles</li>
+            <li>Reading Prompts</li>
+            <!-- Add more hobbies as needed -->
+          </ul>
+        </div>
+      </div>
+      <div class="empty-column"></div>  <!-- Right empty column -->
+       <!-- Add the animation here -->
+  <div class="animation-container">
+    <div class="lightning-container">
+      <div class="lightning white"></div>
+      <div class="lightning red"></div>
+    </div>
+    <div class="boom-container">
+      <div class="shape circle big white"></div>
+      <div class="shape circle white"></div>
+      <div class="shape triangle big yellow"></div>
+      <div class="shape disc white"></div>
+      <div class="shape triangle blue"></div>
+    </div>
+    <div class="boom-container second">
+      <div class="shape circle big white"></div>
+      <div class="shape circle white"></div>
+      <div class="shape disc white"></div>
+      <div class="shape triangle blue"></div>
+    </div>
+  </div>
+
+    </div>
+  </div>
+  
+  </div>
+  
+  
+  <div *ngIf="activeTab === 4" class="tab-content">
+    <!-- Content for Contact Form Tab -->
+    <form [formGroup]="formData" class="contact-form">
+        <div class="row">
+      <div class="form-group">
+        <label for="name">Name:</label><br>
+        <input type="text" formControlName="name" id="name" placeholder="Enter your name"><br>
+        <div *ngIf="formData.get('name')?.invalid && formData.get('name')?.touched" class="error">
+          Name is required.
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="email">Email:</label><br>
+        <input type="email" formControlName="email" id="email" placeholder="Enter your email"><br>
+        <div *ngIf="formData.get('email')?.invalid && formData.get('email')?.touched" class="error">
+          Please enter a valid email.
+        </div>
+      </div>
+    </div>
+      <div class="form-group">
+        <label for="msg">Your Message:</label><br>
+        <textarea formControlName="msg" id="msg" placeholder="Enter your message"></textarea><br>
+        <div *ngIf="formData.get('msg')?.invalid && formData.get('msg')?.touched" class="error">
+          Message is required.
+        </div>
+      </div>
+    
+      <button type="submit" [disabled]="formData.invalid" (click)="onSubmit($event)" class="submit-btn">Submit</button>
+    </form>
+    
+  </div>
+  
+  <div *ngIf="activeTab === 5" class="tab-content">
+    <!-- Content for Locate Me Tab -->
+    <app-maps></app-maps> 
+  </div>
+  
